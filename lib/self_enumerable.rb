@@ -2,10 +2,10 @@ require "self_enumerable/version"
 
 module SelfEnumerable
   WRAPPED_METHODS = [
-    :collect, :collect_concat, :drop, :drop_while, :first, :find_all, :flat_map,
-    :grep, :map, :max, :min, :min_by, :partition, :reject, :select, :sort, :sort_by,
+    :collect, :collect_concat, :drop, :drop_while, :first, :find_all,
+    :grep, :max, :min, :min_by, :partition, :reject, :select, :sort, :sort_by,
     :take, :take_while
-  ]
+  ] # map/flat_map are disabled because its often used to map something into another format
 
   def self.included(klass)
     klass.class_eval <<-eoruby

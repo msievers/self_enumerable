@@ -26,7 +26,7 @@ describe SelfEnumerable do
 
       context "in case the enumerable method would return an array" do
         # generic "take a block" methods
-        [:collect, :drop_while, :find_all, :flat_map, :map, :reject, :select, :sort_by, :take_while].each do |_method_name|
+        [:collect, :drop_while, :find_all, :reject, :select, :sort_by, :take_while].each do |_method_name|
           describe "##{_method_name}" do
             it "should return an instance of its class" do
               expect(subject.send(_method_name) { |_el| true }).to be_an(ClassWhichIncludesSelfEnumerable)

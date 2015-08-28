@@ -37,12 +37,12 @@ class BenchmarkSelfEnumerable
     Benchmark.ips do |x|
       callable = -> (_el) { _el }
 
-      x.report("Enumerable#map") do
-        enumerable_data_set.map(&callable)
+      x.report("Enumerable#select") do
+        enumerable_data_set.select(&callable)
       end
 
-      x.report("SelfEnumerable#map") do
-        self_enumerable_data_set.map(&callable)
+      x.report("SelfEnumerable#select") do
+        self_enumerable_data_set.select(&callable)
       end
 
       x.compare!
